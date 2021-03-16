@@ -15,17 +15,27 @@ public class VisitorServiceTest {
 
     @Mock
     VisitorRepository visitorRepository;
+    @Mock
+    HeroRepository heroRepository;
 
     @InjectMocks
     VisitorService subject;
 
     @Test
     public void fetchAllHero(){
-        HeroEntity heroEntity = new HeroEntity("SpiderName");
-        when(visitorRepository.findAll()).thenReturn(List.of(heroEntity));
-        var resultSet = subject.fetchAllHero();
+        // Setup
+        var visitorId = 12345L;
+        VisitorEntity visitorEntity = new VisitorEntity(visitorId,"Mothilal");
+        HeroEntity heroEntity1 = new HeroEntity("Rajini");
+        HeroEntity heroEntity2 = new HeroEntity("Kamal");
 
-        assertThat(resultSet).isEqualTo(List.of(new VisitorDTO(1234,"Mothilal")));
+        // Execution
+        when(visitorRepository.findById(visitorId)).thenReturn(java.util.Optional.of(visitorEntity));
+        when(heroRepository.findAll()).thenReturn(List.of(heroEntity1, heroEntity2));
+        var resultSet = subject.fetchAllHero(visitorId);
+
+        // Assertion
+        assertThat(resultSet).isEqualTo(new VisitedHeroesDto(visitorId, "Mothilal", List.of("Rajini", "Kamal")));
     }
 
 
