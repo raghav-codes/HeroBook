@@ -1,5 +1,8 @@
+import lombok.EqualsAndHashCode;
+
 import java.util.List;
 
+@EqualsAndHashCode
 public class VisitedHeroesDto {
     private long visitorId;
     private String visitorName;

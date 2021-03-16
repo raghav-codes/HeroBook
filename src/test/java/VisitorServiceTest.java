@@ -37,6 +37,4 @@ public class VisitorServiceTest {
         // Assertion
         assertThat(resultSet).isEqualTo(new VisitedHeroesDto(visitorId, "Mothilal", List.of("Rajini", "Kamal")));
     }
-
-
 }
