@@ -1,3 +1,8 @@
+package com.visitors.HeroBook.Service;
+
+import com.visitors.HeroBook.Dto.VisitedHeroesDto;
+import com.visitors.HeroBook.Repository.HeroRepository;
+import com.visitors.HeroBook.Repository.VisitorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

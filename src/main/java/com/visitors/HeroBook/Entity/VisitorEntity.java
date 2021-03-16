@@ -1,3 +1,5 @@
+package com.visitors.HeroBook.Entity;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,12 +13,19 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
-public class HeroEntity {
+public class VisitorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String name;
-    public HeroEntity(String name) {
+    Long id;
+    String name;
+
+    public VisitorEntity(String name) {
+        this.name = name;
+    }
+
+    public VisitorEntity(Long id, String name) {
+        this.id = id;
         this.name = name;
     }
 }
+

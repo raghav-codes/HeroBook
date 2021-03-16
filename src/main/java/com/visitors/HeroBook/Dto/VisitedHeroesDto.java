@@ -1,5 +1,6 @@
-import lombok.EqualsAndHashCode;
+package com.visitors.HeroBook.Dto;
 
+import lombok.EqualsAndHashCode;
 import java.util.List;
 
 @EqualsAndHashCode

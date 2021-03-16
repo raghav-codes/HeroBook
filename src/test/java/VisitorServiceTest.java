@@ -1,3 +1,9 @@
+import com.visitors.HeroBook.Dto.VisitedHeroesDto;
+import com.visitors.HeroBook.Entity.HeroEntity;
+import com.visitors.HeroBook.Entity.VisitorEntity;
+import com.visitors.HeroBook.Repository.HeroRepository;
+import com.visitors.HeroBook.Repository.VisitorRepository;
+import com.visitors.HeroBook.Service.VisitorService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

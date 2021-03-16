@@ -1,4 +1,6 @@
-public class HeroDTO {
+package com.visitors.HeroBook.Dto;
+
+public class HeroDto {
 
     String image;
     String realName;
