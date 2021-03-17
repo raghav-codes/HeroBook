@@ -17,8 +17,11 @@ public class VisitorController {
     public VisitorController(VisitorService visitorService) {
         this.visitorService = visitorService;
     }
+
     @GetMapping("/heroes/{visitorId}")
     public ResponseEntity<?> getVisitorHeroes(@PathVariable Long visitorId){
-        return new ResponseEntity<>(this.visitorService.fetchAllHero(visitorId), HttpStatus.OK);
+        return new ResponseEntity<>(
+                this.visitorService.fetchAllHero(visitorId),
+                HttpStatus.OK);
     }
 }
