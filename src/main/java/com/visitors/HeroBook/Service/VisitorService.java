@@ -20,9 +20,14 @@ public class VisitorService {
     }
 
     public VisitedHeroesDto fetchAllHero(long visitorId) {
-        var visitor = visitorRepository.findById(visitorId).get();
-        var allHero = heroRepository.findAll();
-        var heroNames = allHero.stream().map(hero -> hero.getName()).collect(Collectors.toList());
-        return new VisitedHeroesDto(visitor.getId(), visitor.getName(), heroNames);
+        var visitor = visitorRepository.findById(visitorId);
+        if (visitor.isPresent()) {
+            var allHero = heroRepository.findAll();
+            var heroNames = allHero.stream().map(hero -> hero.getName()).collect(Collectors.toList());
+            return new VisitedHeroesDto(visitor.get().getId(), visitor.get().getName(), heroNames);
+        }
+        else {
+            return new VisitedHeroesDto();
+        }
     }
 }
