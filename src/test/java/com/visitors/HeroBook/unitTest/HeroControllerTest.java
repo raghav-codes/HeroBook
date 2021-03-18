@@ -25,9 +25,7 @@ public class HeroControllerTest {
 
     @Test
     public void getHeroTest() throws Exception {
-        var heroDto = new HeroDto("Rajini", "", "", 175,
-                60, "", "", "", "",
-                "", "", "", "");
+        var heroDto = new HeroDto("Rajini","", "", 175,60, "", "", "", "", "", "", "", "");
 
         RequestBuilder rbPost = post("/hero")
                 .contentType(MediaType.APPLICATION_JSON)
