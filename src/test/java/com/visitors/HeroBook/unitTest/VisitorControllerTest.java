@@ -36,7 +36,9 @@ public class VisitorControllerTest {
 
         RequestBuilder requestBuilder = get("/villains/12345").contentType(MediaType.APPLICATION_JSON);
 
-        mockMvc.perform(requestBuilder).andExpect(status().isOk());
+        mockMvc.perform(requestBuilder).andExpect(status().isOk())
+                .andExpect(jsonPath("$.visitorName").value(IsNull.nullValue()))
+                .andExpect(jsonPath("$.listOfVillains").value((IsNull.nullValue())));
 
     }
 

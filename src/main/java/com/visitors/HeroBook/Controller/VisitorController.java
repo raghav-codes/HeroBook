@@ -24,4 +24,14 @@ public class VisitorController {
                 this.visitorService.fetchAllHero(visitorId),
                 HttpStatus.OK);
     }
+
+    @GetMapping("/villains/{visitorId}")
+    public ResponseEntity<?> getVisitorVillains(@PathVariable Long visitorId){
+
+        return new ResponseEntity<>(
+                this.visitorService.getVillain(visitorId),HttpStatus.OK);
+
+    }
+
+
 }
