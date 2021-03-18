@@ -1,6 +1,7 @@
 package com.visitors.HeroBook.Service;
 
 import com.visitors.HeroBook.Dto.HeroDto;
+import com.visitors.HeroBook.Entity.HeroEntity;
 import com.visitors.HeroBook.Repository.HeroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,11 @@ public class HeroService {
     @Autowired
     public HeroService(HeroRepository heroRepository) {
         this.heroRepository = heroRepository;
+    }
+
+    public void addHero(HeroDto heroDto) {
+        var heroEntity = new HeroEntity(heroDto.getHeroName());
+        this.heroRepository.save(heroEntity);
     }
 
     public HeroDto getHeroByName(String name) {

@@ -32,7 +32,7 @@ public class HeroServiceTest {
         when(heroRepository.findAll()).thenReturn(List.of(heroEntity1, heroEntity2));
 
         // Execution
-        var resultSet = service.getHeroByName("Rajini1");
+        var resultSet = service.getHeroByName("Rajini");
 
         // Assertion
         assertThat(resultSet).isEqualTo(new HeroDto(heroEntity1.getName(), heroEntity1.getImage(),
