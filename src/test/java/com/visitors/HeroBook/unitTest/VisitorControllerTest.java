@@ -31,14 +31,14 @@ public class VisitorControllerTest {
     }
 
 
-    // to be deleted
     @Test
-    public void visitorFetchAllTest() throws Exception {
-        RequestBuilder requestBuilder = get("/heroes/1234").contentType(MediaType.APPLICATION_JSON);
+    public void visitorFetchAllVillains() throws Exception{
 
-        mockMvc.perform(requestBuilder).andExpect(status().isOk())
-                .andExpect(jsonPath("$.visitorId").value(0))
-                .andExpect(jsonPath("$.visitorName").value(IsNull.nullValue()))
-                .andExpect(jsonPath("$.listOfHero").value(IsNull.nullValue()));
+        RequestBuilder requestBuilder = get("/villains/12345").contentType(MediaType.APPLICATION_JSON);
+
+        mockMvc.perform(requestBuilder).andExpect(status().isOk());
+
     }
+
+
 }
