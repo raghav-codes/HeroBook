@@ -1,10 +1,18 @@
 package com.visitors.HeroBook.Dto;
 
-public class HeroDto {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public class HeroDto {
+    String heroName;
     String image;
     String realName;
-    String heroName;
     int height;
     int weight;
     String specialPower;

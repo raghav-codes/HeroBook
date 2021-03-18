@@ -1,4 +1,4 @@
-package com.visitors.HeroBook.integration;
+package com.visitors.HeroBook.unitTest;
 import com.visitors.HeroBook.Dto.VisitedHeroesDto;
 import com.visitors.HeroBook.Entity.HeroEntity;
 import com.visitors.HeroBook.Entity.VisitorEntity;
